@@ -1,0 +1,14 @@
+.product-description {
+  margin-top: 8rem;
+  margin-bottom: 1rem;
+}
+
+.description-title {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+
+.description-content {
+  color: #999;
+}

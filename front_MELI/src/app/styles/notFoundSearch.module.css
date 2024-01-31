@@ -1,0 +1,9 @@
+.not-found-search {
+  background-color: #fff;
+  display: flex;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+}

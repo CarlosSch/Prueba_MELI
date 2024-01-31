@@ -1,0 +1,27 @@
+.breadcrumb-items {
+  font-size: 14px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: #999;
+  padding-left: 0;
+  display: flex;
+  column-gap: 20px;
+}
+
+.breadcrumb-item {
+  list-style: none;
+  position: relative;
+}
+
+.breadcrumb-item:not(:last-child):after {
+  display: block;
+  content: ">";
+  position: absolute;
+  top: 0;
+  right: -15px;
+  font-weight: 600;
+}
+
+.breadcrumb-item:last-child {
+  font-weight: bold;
+}

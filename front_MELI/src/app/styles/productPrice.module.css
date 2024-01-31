@@ -1,0 +1,8 @@
+.product-price {
+  display: flex;
+}
+
+.amount {
+  margin-left: 10px;
+  margin-right: 2px;
+}

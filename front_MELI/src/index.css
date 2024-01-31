@@ -1,0 +1,21 @@
+:root {
+  font-family: "Proxima Nova", -apple-system, "Helvetica Neue", Helvetica,
+    Roboto, Arial, sans-serif;
+  background-color: #eeeeee;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

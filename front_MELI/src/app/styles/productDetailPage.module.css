@@ -1,0 +1,13 @@
+.pdp-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.pdp-layout {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 30px 60px;
+}

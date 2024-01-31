@@ -1,0 +1,49 @@
+.btn-action {
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.btn-action:hover {
+  transition: background-color 0.2s ease-in;
+}
+
+.btn--primary,
+.btn--primary:focus {
+  background-color: #3483fa;
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background-color: #2968c8;
+}
+
+.btn--secondary,
+.btn--secondary:focus {
+  background-color: rgba(65, 137, 230, 0.15);
+  border-color: transparent;
+  color: #3483fa;
+}
+
+.btn--secondary:hover {
+  background-color: rgba(65, 137, 230, 0.2);
+}
+
+.btn--small {
+  border-radius: 5px;
+  font-size: 14px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 12px;
+}
+
+.btn--large {
+  border-radius: 6px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 24px;
+  font-size: 16px;
+}

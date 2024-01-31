@@ -1,0 +1,21 @@
+.home-page {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  min-height: calc(100vh - 58px);
+}
+
+.home-page-content {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.home-page-title{
+    color: #999;
+    font-size: 16px;
+}
