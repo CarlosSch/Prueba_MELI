@@ -4,25 +4,14 @@ interface Props {
   condition: boolean;
   Then?: ReactElement | ReactElement[];
   Else?: ReactElement | ReactElement[];
-  children?: ReactElement | ReactElement[] | ReactNode;
+  children?: ReactNode;
 }
 
-export const ConditionalRender = ({
-  condition,
-  Then,
-  Else,
-  children,
-}: Props) => {
+export const ConditionalRender = ({ condition, Then, Else, children }: Props) => {
+
   if (condition) {
-    if (Then) {
-      return Then;
-    }
-    return children;
+    return Then ? Then : children;
   }
 
-  if (Else) {
-    return Else;
-  }
-
-  return null;
-};
+  return Else ? Else : null;
+}

@@ -1,13 +1,12 @@
 const { AUTHOR, CONDITIONS } = require("./constants");
 
 const buildPrice = (price, currency) => {
-  const fixedPrice = price.toFixed(2);
-  const [amount, decimals] = fixedPrice.toString().split(".");
+  const [amount, decimals] = price.toFixed(2).split(".");
 
   return {
     currency,
-    amount: +amount,
-    decimals: +decimals,
+    amount: +(amount),
+    decimals: +(decimals),
   };
 };
 
