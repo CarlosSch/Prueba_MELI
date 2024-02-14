@@ -1,9 +1,9 @@
 # Prueba Técnica Mercado Libre 💻
 
-En  este repositorio se encuentra el proyecto realizado para la prueba técnica de Mercado Libre. El objetivo era crear una aplicación que permita buscar productos el la ruta de busqueda `/items?search=:q`. Además de poder listar su detalle en una PDP en la ruta `/items/:id` 
+En  este repositorio se encuentra el proyecto realizado para la prueba técnica de Mercado Libre. El objetivo era crear una aplicación que permita buscar productos el la ruta de `/items?search=:q`. Además de poder listar su detalle en una PDP en la ruta `/items/:id` 
 
 
-## Técnologías
+## Tecnologías
 
 ### Frontend
 - React
