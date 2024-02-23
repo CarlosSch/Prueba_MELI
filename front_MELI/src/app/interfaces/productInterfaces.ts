@@ -14,7 +14,10 @@ export interface Product {
     picture: string;
     condition: string;
     free_shipping: boolean;
-    sold_quantity?: number;
-    description?: string;
+
 }
- 
+
+export interface ProductDetailProps extends Product {
+    sold_quantity?: number;
+    description: string;
+}
