@@ -1,8 +1,8 @@
 import { Children, ReactNode } from "react";
 
-interface Props<A> {
-  of: A[];
-  render: (item: A, index: number) => ReactNode;
+interface Props<ElementType> {
+  of: ElementType[];
+  render: (item: ElementType, index: number) => ReactNode;
 }
 
 export const MapRender = <A,>({ render, of }: Props<A>) => {
