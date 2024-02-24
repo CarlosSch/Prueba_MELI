@@ -14,3 +14,4 @@ export * from './NotFoundSearch';
 export * from './ProductDetail';
 export * from './HelmetData';
 export * from './Loader';
+export * from './Show';
