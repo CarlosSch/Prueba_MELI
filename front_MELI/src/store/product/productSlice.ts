@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { Author, Product } from '../../app/interfaces';
+import { Author, Product, ProductDetailProps } from '../../app/interfaces';
 
 interface InitialState {
     author: Author;
     categories: string[];
     products: Product[];
-    productDetail: Product;
+    productDetail: ProductDetailProps;
     isLoadingProducts: boolean;
     error: string;
 }
