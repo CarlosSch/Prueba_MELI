@@ -9,7 +9,7 @@ interface Props {
   /**
    * Decimals price product
    */
-  decimals?: number | string;
+  decimals?: number;
   /**
    * Show decimals price product
    */
@@ -31,11 +31,12 @@ interface Props {
 export const ProductPrice = ({
   amount,
   showDecimals = false,
-  decimals = "00",
+  decimals = 0,
   currency,
   fontColor = "#333333",
   fontSize = "24px",
 }: Props) => {
+
   const formatAmount = new Intl.NumberFormat("de-DE", {
     style: "decimal",
     currency,
