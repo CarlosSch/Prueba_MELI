@@ -10,8 +10,8 @@ interface Props {
 export const ConditionalRender = ({ condition, Then, Else, children }: Props) => {
 
   if (condition) {
-    return Then ? Then : children;
+    return Then || children;
   }
 
-  return Else ? Else : null;
+  return Else || null;
 }
