@@ -18,6 +18,7 @@ export const SearchPage = () => {
     useProductStore();
   const { search } = useLocation();
   const navigate = useNavigate();
+
   const query = useMemo(
     () => new URLSearchParams(search).get("search"),
     [search]
@@ -53,23 +54,9 @@ export const SearchPage = () => {
             <ul className={style["search-layout-stack"]}>
               <MapRender
                 of={products}
-                render={({
-                  id,
-                  title,
-                  price,
-                  picture,
-                  condition,
-                  free_shipping,
-                }) => (
+                render={(product) => (
                   <li className={style["search-item"]}>
-                    <ProductCard
-                      id={id}
-                      title={title}
-                      price={price}
-                      picture={picture}
-                      condition={condition}
-                      free_shipping={free_shipping}
-                    />
+                    <ProductCard product={product} />
                   </li>
                 )}
               />
