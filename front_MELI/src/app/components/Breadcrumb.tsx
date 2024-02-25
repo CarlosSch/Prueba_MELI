@@ -8,14 +8,14 @@ interface Props {
 export const Breadcrumb = ({ categories }: Props) => {
   return (
     <div className="search-breadcrumb">
-      <ul className={styles["breadcrumb-items"]}>
+      <ol className={styles["breadcrumb-items"]}>
         <MapRender
           of={categories}
           render={(item) => (
             <li className={styles["breadcrumb-item"]}>{item}</li>
           )}
         />
-      </ul>
+      </ol>
     </div>
   );
 };
