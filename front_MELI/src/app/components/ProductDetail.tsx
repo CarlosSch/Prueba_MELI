@@ -1,4 +1,4 @@
-import { Product } from "../interfaces";
+import { ProductDetailProps } from "../interfaces";
 import {
   ProductImage,
   ProductTitle,
@@ -9,14 +9,8 @@ import {
 } from "./";
 import styles from "../styles/productDetail.module.css";
 
-export const ProductDetail = ({
-  title,
-  price,
-  picture,
-  condition,
-  free_shipping,
-  description,
-}: Product) => {
+export const ProductDetail = ({product}: {product: ProductDetailProps}) => {
+  const { title, price, picture, condition, free_shipping, description } = product;
   const { amount, currency, decimals } = price;
 
   return (

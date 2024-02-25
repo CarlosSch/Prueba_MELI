@@ -2,15 +2,17 @@ import { ProductImage, ProductTitle, IconFreeShipping, ProductPrice } from "./";
 import { Product } from "../interfaces";
 import styles from "../styles/productCard.module.css";
 
-export const ProductCard = ({
-  id,
-  title,
-  price: { amount, currency },
-  picture,
-  condition,
-  free_shipping,
-}: Product) => {
+export const ProductCard = ({ product }: { product: Product }) => {
   
+  const {
+    id,
+    title,
+    price: { amount, currency },
+    picture,
+    condition,
+    free_shipping,
+  } = product;
+
   return (
     <div className={styles["product-card"]}>
       <ProductImage
