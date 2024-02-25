@@ -1,5 +1,5 @@
 import { MapRender } from "./MapRender";
-import styles from "../styles/breadcrumb.module.css";
+import style from "../styles/breadcrumb.module.css";
 
 interface Props {
   categories: string[];
@@ -7,15 +7,15 @@ interface Props {
 
 export const Breadcrumb = ({ categories }: Props) => {
   return (
-    <div className="search-breadcrumb">
-      <ol className={styles["breadcrumb-items"]}>
+    <nav className={style.breadcrumb}>
+      <ul className={style.breadcrumb__list}>
         <MapRender
           of={categories}
           render={(item) => (
-            <li className={styles["breadcrumb-item"]}>{item}</li>
+            <li className={style.breadcrumb__item}>{item}</li>
           )}
         />
-      </ol>
-    </div>
+      </ul>
+    </nav>
   );
 };
