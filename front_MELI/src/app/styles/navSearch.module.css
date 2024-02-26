@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.nav-search-input {
+.nav-search__input {
     position: relative;
     color: #333;
     font-size: 18px;
@@ -21,15 +21,15 @@
     outline: none;
 }
 
-.nav-search-input:focus {
+.nav-search__input:focus {
     border: 1.5px solid #3483fa;
 }
 
-.nav-search-input::placeholder {
+.nav-search__input::placeholder {
     color: #999;
 }
 
-.nav-search-btn {
+.nav-search__button {
     position: absolute;
     top: 0;
     bottom: 0;

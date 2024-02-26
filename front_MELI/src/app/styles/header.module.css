@@ -21,7 +21,7 @@
   max-width: 1160px;
 }
 
-.nav-left {
+.nav-items--left {
   justify-content: flex-start;
 }
 
@@ -30,6 +30,6 @@
   width: 36px;
 }
 
-.nav-right {
+.nav-items--right {
   justify-content: flex-end;
 }

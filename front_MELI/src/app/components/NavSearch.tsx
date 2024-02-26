@@ -30,12 +30,12 @@ export const NavSearch = ({ placeholder }: Props) => {
       onSubmit={handleSubmit}
     >
       <input
-        className={styles["nav-search-input"]}
+        className={styles["nav-search__input"]}
         type="text"
         placeholder={placeholder}
         ref={inputRef}
       />
-      <button className={styles["nav-search-btn"]} type="submit">
+      <button className={styles["nav-search__button"]} type="submit">
         <img src={iconSearch} alt="buscar" />{" "}
       </button>
     </form>
