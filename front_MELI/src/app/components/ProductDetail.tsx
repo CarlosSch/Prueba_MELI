@@ -34,11 +34,10 @@ export const ProductDetail = ({product}: {product: ProductDetailProps}) => {
               className={styles["pdp-subtitle-content"]}
             >{`${condition}`}</span>
           </div>
-          <ProductTitle title={title} size="long" fontColor="#333" />
+          <ProductTitle title={title} size="large" fontColor="#333" />
           <div className={styles["pdp-price"]}>
             <ProductPrice
               amount={amount}
-              showDecimals={true}
               decimals={decimals}
               currency={currency}
               fontSize="46px"

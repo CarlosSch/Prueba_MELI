@@ -7,8 +7,8 @@ interface Props {
   width?: string;
   height?: string;
   decoding?: "async" | "sync";
+  loading?: "eager" | "lazy";
   alt: string;
-  borderRadius?: string;
   link?: string;
 }
 
@@ -17,31 +17,32 @@ export const ProductImage = ({
   width = "100%",
   height = "100%",
   decoding = "async",
-  borderRadius = "0",
+  loading = "lazy",
   alt,
   link = "",
 }: Props) => {
+  
   const Img = (
     <img
       className={styles["product-image"]}
       src={src}
       width={width}
       height={height}
-      decoding={decoding}
       alt={alt}
+      loading={loading}
+      decoding={decoding}
     />
   );
 
   return (
-    <div
-      className={styles["product-image-containter"]}
-      style={{ borderRadius, width, height }}
-    >
-      <ConditionalRender condition={!!link} Else={Img}>
+    <ConditionalRender
+      condition={!!link}
+      Then={
         <Link to={link} title={alt}>
           {Img}
         </Link>
-      </ConditionalRender>
-    </div>
+      }
+      Else={Img}
+    />
   );
 };

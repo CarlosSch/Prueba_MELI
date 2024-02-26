@@ -22,7 +22,7 @@ interface Props {
   /**
    * Size to title
    */
-  size?: "small" | "long";
+  size?: "small" | "large";
   /**
    * If you want to show the title truncated
    */
@@ -37,14 +37,12 @@ export const ProductTitle = ({
   fontColor = "#666666",
   truncate = false,
 }: Props) => {
-  
   const Heading = () => {
     const CustomHeading = `h${level}` as keyof JSX.IntrinsicElements;
-    
+
     const className = `
-    ${styles.heading} 
-    ${styles[size]} 
-    ${truncate ? styles.truncated : ""}`;
+    ${styles[`product-title--${size}`]} 
+    ${truncate ? styles["product-title--truncated"] : ""} `;
 
     return (
       <CustomHeading className={className} style={{ color: fontColor }}>
@@ -54,12 +52,20 @@ export const ProductTitle = ({
   };
 
   return (
-    <div className={styles["product-title-container"]}>
-      <ConditionalRender condition={!!link} Else={<Heading />}>
-        <Link className={styles["product-title-link"]} to={link} title={title}>
-          <Heading />
-        </Link>
-      </ConditionalRender>
+    <div className={styles["product-title"]}>
+      <ConditionalRender
+        condition={!!link}
+        Then={
+          <Link
+            className={styles["product-title__link"]}
+            to={link}
+            title={title}
+          >
+            <Heading />
+          </Link>
+        }
+        Else={<Heading />}
+      />
     </div>
   );
 };

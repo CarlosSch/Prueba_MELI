@@ -14,8 +14,7 @@ import {
 import style from "../styles/searchPage.module.css";
 
 export const SearchPage = () => {
-  const { products, categories, isLoadingProducts, error, searchProducts } =
-    useProductStore();
+  const { products, categories, isLoadingProducts, error, searchProducts } = useProductStore();
   const { search } = useLocation();
   const navigate = useNavigate();
 
@@ -36,7 +35,7 @@ export const SearchPage = () => {
   );
 
   const meta = {
-    title: `${query} | Mercado Libre `,
+    title: `${query} | Mercado Libre`,
     description: `Envíos Gratis en el día ✓ ¡Comprá ${query} en cuotas sin interés! Conocé nuestras increíbles ofertas y promociones en millones de productos.`,
   };
 

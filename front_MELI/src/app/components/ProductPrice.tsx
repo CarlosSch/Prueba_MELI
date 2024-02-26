@@ -1,5 +1,5 @@
-import { ConditionalRender } from "./ConditionalRender";
-import styles from "../styles/productPrice.module.css";
+import style from "../styles/productPrice.module.css";
+import { Show } from "./Show";
 
 interface Props {
   /**
@@ -11,12 +11,8 @@ interface Props {
    */
   decimals?: number;
   /**
-   * Show decimals price product
-   */
-  showDecimals?: boolean;
-  /**
    * Currency product
-   */ 
+   */
   currency?: string;
   /**
    * Font color price
@@ -30,38 +26,31 @@ interface Props {
 
 export const ProductPrice = ({
   amount,
-  showDecimals = false,
   decimals = 0,
   currency,
   fontColor = "#333333",
   fontSize = "24px",
 }: Props) => {
-
   const formatAmount = new Intl.NumberFormat("de-DE", {
     style: "decimal",
     currency,
   }).format(amount);
 
-  const Decimals = (
-    <span
-      className="decimals"
-      style={{ fontSize: `calc(${fontSize} / 2 )`, lineHeight: 1.9 }}
-    >
-      {decimals}
-    </span>
-  );
-
   return (
     <div
-      className={styles["product-price"]}
+      className={style["product-price"]}
       style={{ color: fontColor, fontSize }}
     >
-      <span className="currency">$</span>
-      <span className={styles.amount}>{formatAmount}</span>
-      <ConditionalRender
-        condition={!!decimals && showDecimals}
-        Then={Decimals}
-      />
+      <span className={style["product-price___currency"]}>$</span>
+      <span className={style["product-price__amount"]}>{formatAmount}</span>
+      <Show.When isTrue={!!decimals}>
+        <span
+          className="decimals"
+          style={{ fontSize: `calc(${fontSize} / 2 )`, lineHeight: 1.9 }}
+        >
+          {decimals}
+        </span>
+      </Show.When>
     </div>
   );
 };

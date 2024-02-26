@@ -1,13 +1,7 @@
-.product-image-containter {
-  box-sizing: content-box;
-  margin: 0;
-  padding: 0 16px;
-}
-
 .product-image {
-  box-sizing: content-box;
-  flex-shrink: 0;
   margin: 0;
+  box-sizing: content-box;
   object-fit: contain;
   object-position: center;
+  border-radius: 4px
 }
