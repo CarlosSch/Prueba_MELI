@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/navSearch.module.css";
 import iconSearch from "../../assets/images/ic_Search.png";
@@ -14,7 +14,7 @@ export const NavSearch = ({ placeholder }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const query = inputRef.current?.value;
     if (query) {
