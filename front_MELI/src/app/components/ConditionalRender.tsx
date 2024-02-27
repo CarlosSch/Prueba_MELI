@@ -1,9 +1,9 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactNode } from "react";
 
 interface Props {
   condition: boolean;
-  Then?: ReactElement | ReactElement[];
-  Else?: ReactElement | ReactElement[];
+  Then?: ReactNode;
+  Else?: ReactNode;
   children?: ReactNode;
 }
 
