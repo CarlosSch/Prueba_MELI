@@ -1,31 +1,28 @@
-import { Header } from "../app/components";
+import { Suspense, lazy } from "react";
+import { Loader, Header } from "../app/components";
+import { BrowserRouter, Route, Routes, Outlet } from "react-router-dom";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Outlet,
-} from "react-router-dom";
-import {
-  HomePage,
-  SearchPage,
-  ProductDetailPage,
-  NotFoundPage,
-} from "../app/pages";
+const HomePage = lazy(() => import("../app/pages/HomePage"));
+const SearchPage = lazy(() => import("../app/pages/SearchPage"));
+const ProductDetailPage = lazy(() => import("../app/pages/ProductDetailPage"));
+const NotFoundPage = lazy(() => import("../app/pages/NotFoundPage"));
 
 export const Navigation = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/items" element={<Outlet />}>
-          <Route index element={<SearchPage />} />
-          <Route path=":id" element={<ProductDetailPage />} />
-        </Route>
-        <Route path="/*" element={<NotFoundPage />} />
-      </Routes>
-    </Router>
+      <Suspense fallback={<Loader />}>
+        <main role="main">
+          <Routes>
+            <Route path="/" element={<Outlet />}>
+              <Route index element={<HomePage />} />
+              <Route path="items" element={<SearchPage />} />
+              <Route path="items/:id" element={<ProductDetailPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Route>
+          </Routes>
+        </main>
+      </Suspense>
+    </BrowserRouter>
   );
 };
