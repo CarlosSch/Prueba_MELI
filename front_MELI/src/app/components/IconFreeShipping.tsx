@@ -8,7 +8,13 @@ export const IconFreeShipping = ({ isFree }: Props) => {
   return (
     <ConditionalRender condition={isFree}>
       <div className="ic-free-shipping">
-        <img src={ic_shipping} alt="Envio Gratis" width={18} height={18} />
+        <img
+          src={ic_shipping}
+          alt="Envio Gratis"
+          width={18}
+          height={18}
+          loading="lazy"
+        />
       </div>
     </ConditionalRender>
   );
