@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
+import fetchApi from "../api/fetchApi";
+import { AxiosError } from "axios";
 import {
   onLoadProductDetail,
   onLoadProducts,
@@ -6,8 +8,6 @@ import {
   onLoadError,
   RootState,
 } from "../../store";
-import fetchApi from "../api/fetchApi";
-import axios, { AxiosError } from "axios";
 
 export const useProductStore = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export const useProductStore = () => {
       const { data } = await fetchApi.get(`items?q=${query}`);
       dispatch(onLoadProducts(data));
     } catch (error) {
-      if (axios.AxiosError) {
+      if (AxiosError) {
         const axiosError = error as AxiosError;
         dispatch(onLoadError(axiosError.response?.data));
       } else {
@@ -35,7 +35,7 @@ export const useProductStore = () => {
       const { data } = await fetchApi.get(`items/${id}`);
       dispatch(onLoadProductDetail(data));
     } catch (error) {
-      if (axios.AxiosError) {
+      if (AxiosError) {
         const axiosError = error as AxiosError;
         dispatch(onLoadError(axiosError.response?.data));
       } else {
@@ -43,6 +43,7 @@ export const useProductStore = () => {
       }
     }
   };
+
   return {
     //States
     products,
